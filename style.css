@@ -382,7 +382,7 @@ h2 {
     transform: translateX(0);
   }
 }
-
+/* ===== 
 /* 🌐  mobile */
 @media (max-width: 768px) {
   nav {
@@ -426,7 +426,7 @@ h2 {
 }
 
 
-
+===== */
 
 
 
