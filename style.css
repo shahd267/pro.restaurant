@@ -383,50 +383,7 @@ h2 {
   }
 }
 /* ===== 
-/* 🌐  mobile */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-  }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .menu-items {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-item {
-    width: 90%;
-  }
-
-  form {
-    width: 90%;
-  }
-
-  .toast {
-    bottom: 20px;
-    right: 20px;
-    font-size: 0.9rem;
-    padding: 12px 20px;
-  }
-}
-
-
-===== */
 
 
 
