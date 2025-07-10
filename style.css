@@ -17,7 +17,7 @@ a {
   color: inherit;
 }
 
-/* ===== Navbar) ===== */
+/* ===== Navbar ===== */
 header {
   background-color: #964629;
   padding: 20px 40px;
@@ -56,7 +56,7 @@ nav {
   color: #d7a26c;
 }
 
-/* =====   (Hero Section) ===== */
+/* ===== Hero Section ===== */
 .hero {
   background: url('images/restaurant-bg.jpg') center/cover no-repeat;
   padding: 100px 20px;
@@ -110,7 +110,7 @@ nav {
   background-color: #a1887f;
 }
 
-/* ===== menu section ===== */
+/* ===== Menu Section ===== */
 .menu-section {
   padding: 60px 20px;
   text-align: center;
@@ -172,6 +172,7 @@ nav {
   font-size: 0.9rem;
 }
 
+/* ===== Testimonials Section ===== */
 .testimonials-section {
   background-color: #fff7f0;
   padding: 60px 20px;
@@ -208,28 +209,7 @@ nav {
   color: #964629;
 }
 
-
-/* ===== آراء العملاء ===== */
-.reviews-section {
-  background-color: #f3ece7;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.reviews-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #8d6e63;
-}
-
-.reviews-section blockquote {
-  font-style: italic;
-  margin: 15px auto;
-  max-width: 600px;
-  color: #5d4037;
-}
-
-/* ===== من نحن (About Us) ===== */
+/* ===== About Us ===== */
 .about-section {
   padding: 60px 20px;
   background-color: #fff7f0;
@@ -252,7 +232,7 @@ nav {
   animation: fadeInUp 1.4s ease-out;
 }
 
-/* ===== لماذا تختارنا (Features) ===== */
+/* ===== Features ===== */
 .features-section {
   padding: 60px 20px;
   background-color: #f5ede3;
@@ -276,7 +256,7 @@ nav {
   margin: 10px 0;
 }
 
-/* ===== التواصل ===== */
+/* ===== Contact Section ===== */
 .contact-section {
   padding: 60px 20px;
   text-align: center;
@@ -318,7 +298,7 @@ form button:hover {
   background-color: #a1887f;
 }
 
-/* ===== الفوتر ===== */
+/* ===== Footer ===== */
 footer {
   background-color: #3e2723;
   color: white;
@@ -363,7 +343,8 @@ footer {
   transform: translateY(0);
 }
 
-.toast.hidden {
+.toast.hidden,
+.hidden {
   display: none;
 }
 
@@ -382,14 +363,8 @@ h2 {
     transform: translateX(0);
   }
 }
-/* ===== 
 
-
-
-
-/* =====  page oerder  ===== */
-
-
+/* ===== Order Page Section ===== */
 .order-section {
   padding: 60px 20px;
   text-align: center;
@@ -441,42 +416,6 @@ h2 {
   background-color: #a1887f;
 }
 
-
-.toast {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #8d6e63;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease-in-out;
-  z-index: 999;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.toast.hidden {
-  display: none;
-}
-
-
-.hidden {
-  display: none;
-}
-
-
-
-
-
-/* =====   ]  ===== */
 .order-section.with-bg {
   background: url('images/order-banner.jpg') center/cover no-repeat;
   padding: 80px 20px;
@@ -487,14 +426,13 @@ h2 {
   justify-content: center;
 }
 
-/* =====  ===== */
 .order-overlay {
-  background-color: rgba(255, 255, 255, 0.85); /* شفافية 85% */
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 40px;
   border-radius: 15px;
   max-width: 600px;
   width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(4px); /* ضباب خفيف */
+  backdrop-filter: blur(4px);
   animation: fadeInUp 1s ease-out;
 }
