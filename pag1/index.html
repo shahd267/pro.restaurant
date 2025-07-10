@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlavorFrame | We Build Tasty Websites</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Inline Styles for Testimonials Section -->
+  <style>
+    .testimonials-section {
+      background-color: #f3ece7;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonial-slider {
+      max-width: 700px;
+      margin: auto;
+      position: relative;
+    }
+    .testimonial {
+      display: none;
+      animation: fade 0.6s ease-in-out;
+      font-style: italic;
+      color: #5d4037;
+    }
+    .testimonial.active {
+      display: block;
+    }
+    .testimonial h4 {
+      margin-top: 10px;
+      color: #8d6e63;
+    }
+    .slider-dots {
+      margin-top: 15px;
+    }
+    .slider-dots .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .slider-dots .dot.active {
+      background: #8d6e63;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav>
+      <div class="logo">FlavorFrame</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="hero">
+    <h1>Welcome to FlavorFrame</h1>
+    <p>Delicious food, delivered to you</p>
+    <a href="#menu" class="btn">View Menu</a>
+  </section>
+
+  <!-- ========== MENU SECTION ========== -->
+  <section id="menu" class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="images/pizza.jpg" alt="Pizza" />
+        <h3>Pizza</h3>
+        <p>Cheesy and tasty Italian-style pizza</p>
+      </div>
+      <div class="menu-item">
+        <img src="images/burger.jpg" alt="Burger" />
+        <h3>Burger</h3>
+        <p>Juicy burger with fresh ingredients</p>
+      </div>
+      <div class="menu-item">
+        <img src="images/pasta.jpg" alt="Pasta" />
+        <h3>Pasta</h3>
+        <p>Delicious pasta with creamy sauce</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section id="reviews" class="testimonials-section">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <p>“Absolutely delicious! The best online food experience I've ever had.”</p>
+        <h4>- Sarah L.</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Quick delivery, hot meals, and friendly service. Highly recommended!”</p>
+        <h4>- Ahmed R.</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Every dish was perfect. FlavorFrame really delivers!”</p>
+        <h4>- Lina M.</h4>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="about-section">
+    <h2>About FlavorFrame</h2>
+    <p>We design beautiful, modern websites for restaurants and food businesses around the world. Let your menu shine online!</p>
+  </section>
+
+  <!-- ========== FEATURES SECTION ========== -->
+  <section id="features" class="features-section">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>🍽️ Responsive design for all devices</li>
+      <li>⚡ Fast loading speed</li>
+      <li>🎨 Custom design matching your brand</li>
+    </ul>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    &copy; 2025 FlavorFrame. All rights reserved.
+    <div class="social-icons">
+      <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+    </div>
+  </footer>
+
+  <!-- ========== TOAST WELCOME MESSAGE ========== -->
+  <div id="welcome-message" class="toast hidden">
+    Welcome to FlavorFrame! 🍕 Hope you're hungry!
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // ===== Testimonial Slider Logic =====
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll(".testimonial");
+    const dots = document.querySelectorAll(".dot");
+
+    function showTestimonial(index) {
+      testimonials.forEach((t, i) => {
+        t.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+      currentTestimonial = index;
+    }
+
+    function nextTestimonial() {
+      let next = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(next);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => showTestimonial(i));
+    });
+
+    setInterval(nextTestimonial, 4000);
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Online | FlavorFrame</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .order-section.with-bg {
+      background: url("images/order-banner.jpg") center/cover no-repeat;
+      padding: 80px 20px;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .order-overlay {
+       background-color: rgba(255, 255, 255, 0.7); 
+       backdrop-filter: blur(4px);
+
+
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .order-overlay h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #8d6e63;
+    }
+
+    .order-form label {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .order-form input,
+    .order-form textarea,
+    .order-form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .order-form button {
+      padding: 12px;
+      background-color: #d7a26c;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .order-form button:hover {
+      background-color: #a1887f;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #8d6e63;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease-in-out;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast.hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #3e2723;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <nav>
+      <div class="logo">FlavorFrame</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Order Section ===== -->
+  <section class="order-section with-bg">
+    <div class="order-overlay">
+      <h2>Order Your Favorite Dishes</h2>
+
+      <form class="order-form" id="order-form">
+        <p id="confirmation-msg" class="hidden" style="color: green; font-weight: 600;">
+          ✅ Order received! We'll contact you soon.
+        </p>
+
+        <label>Choose Dish:
+          <select id="dish" required>
+            <option value="">-- Select --</option>
+            <option value="10">🍕 Pizza - $10</option>
+            <option value="8">🍔 Burger - $8</option>
+            <option value="9">🍝 Pasta - $9</option>
+          </select>
+        </label>
+
+        <label>Quantity:
+          <input type="number" min="1" value="1" id="quantity" required />
+        </label>
+
+        <p id="total-price" style="color:#8d6e63; font-weight:600;">Total: $0</p>
+
+        <label>Your Name:
+          <input type="text" id="name" required />
+        </label>
+
+        <label>Phone Number:
+          <input type="tel" id="phone" required />
+        </label>
+
+        <label>Delivery Address:
+          <textarea rows="3" id="address" required></textarea>
+        </label>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+
+    <div id="order-toast" class="toast hidden">✅ Your order was submitted successfully!</div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    &copy; 2025 FlavorFrame. All rights reserved.
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    const form = document.getElementById("order-form");
+    const toast = document.getElementById("order-toast");
+    const totalPrice = document.getElementById("total-price");
+    const dish = document.getElementById("dish");
+    const quantity = document.getElementById("quantity");
+
+    function updatePrice() {
+      const price = parseFloat(dish.value);
+      const qty = parseInt(quantity.value);
+      if (!isNaN(price) && !isNaN(qty)) {
+        totalPrice.textContent = `Total: $${price * qty}`;
+      } else {
+        totalPrice.textContent = "Total: $0";
+      }
+    }
+
+    dish.addEventListener("change", updatePrice);
+    quantity.addEventListener("input", updatePrice);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      toast.classList.remove("hidden");
+      toast.classList.add("show");
+
+      form.reset();
+      totalPrice.textContent = "Total: $0";
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.classList.add("hidden"), 400);
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>
+
+

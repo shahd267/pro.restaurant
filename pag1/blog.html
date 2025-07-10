@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlavorFrame | Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .blog-section {
+      padding: 60px 20px;
+      background-color: #fffaf4;
+    }
+
+    .blog-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #8d6e63;
+    }
+
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .blog-post {
+      background-color: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-post img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-post-content {
+      padding: 20px;
+    }
+
+    .blog-post-content h3 {
+      margin-bottom: 10px;
+      color: #4e342e;
+    }
+
+    .blog-post-content p {
+      color: #5d4037;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .blog-post-content a {
+      display: inline-block;
+      margin-top: 15px;
+      color: #d7a26c;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .blog-post-content a:hover {
+      color: #a1887f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <nav>
+      <div class="logo">FlavorFrame</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Blog Section ===== -->
+  <section class="blog-section">
+    <h2>Latest From Our Blog</h2>
+
+    <div class="blog-container">
+      <div class="blog-post">
+        <img src="images/blog1.jpg" alt="Healthy Ingredients" />
+        <div class="blog-post-content">
+          <h3>5 Healthy Ingredients We Use</h3>
+          <p>Discover the top natural and fresh ingredients we include in every dish to ensure quality and health.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-post">
+        <img src="images/blog2.jpg" alt="Behind the scenes" />
+        <div class="blog-post-content">
+          <h3>A Peek Into Our Kitchen</h3>
+          <p>Come behind the scenes and meet the chefs and the creativity that goes into your favorite meals.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-post">
+        <img src="images/blog3.jpg" alt="Food tips" />
+        <div class="blog-post-content">
+          <h3>3 Quick Tips for Food Presentation</h3>
+          <p>Make your home dishes look as good as they taste. Learn how we plate food like pros!</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 FlavorFrame. All rights reserved.
+  </footer>
+
+</body>
+</html>

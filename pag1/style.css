@@ -1,0 +1,543 @@
+/* إعداد عام */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-color: #f5ede3;
+  color: #4e342e;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Navbar) ===== */
+header {
+  background-color: #964629;
+  padding: 20px 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-bottom: 1px solid #2c1d18;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f5ede3;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #d7a26c;
+}
+
+/* =====   (Hero Section) ===== */
+.hero {
+  background: url('images/restaurant-bg.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #d7a26c;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+.btn:hover {
+  background-color: #a1887f;
+}
+
+/* ===== menu section ===== */
+.menu-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.menu-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #8d6e63;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.menu-item {
+  width: 250px;
+  border: 1px solid #dfd8d847;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: hsl(11, 40%, 73%);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  animation: popIn 0.6s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.menu-item h3 {
+  margin: 15px 0 5px;
+  color: #4e342e;
+}
+
+.menu-item p {
+  padding: 0 15px 15px;
+  color: #6d4c41;
+  font-size: 0.9rem;
+}
+
+.testimonials-section {
+  background-color: #fff7f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  color: #8d6e63;
+  margin-bottom: 30px;
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+}
+
+.testimonial {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  font-size: 1.1rem;
+  color: #5d4037;
+}
+
+.testimonial.active {
+  display: block;
+  opacity: 1;
+}
+
+.testimonial h4 {
+  margin-top: 15px;
+  color: #964629;
+}
+
+
+/* ===== آراء العملاء ===== */
+.reviews-section {
+  background-color: #f3ece7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #8d6e63;
+}
+
+.reviews-section blockquote {
+  font-style: italic;
+  margin: 15px auto;
+  max-width: 600px;
+  color: #5d4037;
+}
+
+/* ===== من نحن (About Us) ===== */
+.about-section {
+  padding: 60px 20px;
+  background-color: #fff7f0;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  color: #8d6e63;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #5d4037;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.7;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+/* ===== لماذا تختارنا (Features) ===== */
+.features-section {
+  padding: 60px 20px;
+  background-color: #f5ede3;
+  text-align: center;
+}
+
+.features-section h2 {
+  color: #8d6e63;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.features-section ul {
+  list-style: none;
+  padding: 0;
+  color: #6d4c41;
+  font-size: 1.1rem;
+}
+
+.features-section li {
+  margin: 10px 0;
+}
+
+/* ===== التواصل ===== */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #8d6e63;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  padding: 12px;
+  background-color: #d7a26c;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #a1887f;
+}
+
+/* ===== الفوتر ===== */
+footer {
+  background-color: #3e2723;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== Social Media ===== */
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Toast Message ===== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #8d6e63;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hidden {
+  display: none;
+}
+
+/* ===== Animations للعناوين ===== */
+h2 {
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 🌐  mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: 90%;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .toast {
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+}
+
+
+
+
+
+
+/* =====  page oerder  ===== */
+
+
+.order-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fffaf4;
+}
+
+.order-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #8d6e63;
+}
+
+.order-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-weight: 600;
+  color: #5d4037;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.order-form button {
+  padding: 12px;
+  background-color: #d7a26c;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.order-form button:hover {
+  background-color: #a1887f;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #8d6e63;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hidden {
+  display: none;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+/* =====   ]  ===== */
+.order-section.with-bg {
+  background: url('images/order-banner.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====  ===== */
+.order-overlay {
+  background-color: rgba(255, 255, 255, 0.85); /* شفافية 85% */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px); /* ضباب خفيف */
+  animation: fadeInUp 1s ease-out;
+}
