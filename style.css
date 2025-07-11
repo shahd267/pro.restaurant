@@ -436,3 +436,37 @@ h2 {
   backdrop-filter: blur(4px);
   animation: fadeInUp 1s ease-out;
 }
+
+
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 1.8rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* للموبايل */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #964629;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
